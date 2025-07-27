@@ -1,0 +1,1 @@
+Animated Tic-Tac-Toe game built using HTML, CSS, and JavaScript. Features include a stunning entrance animation, two-player and AI modes, three difficulty levels, real-time score tracking, responsive design, and elegant visual effects like glassmorphism and particle backgrounds.
