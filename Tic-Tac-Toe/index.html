@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Animated Entrance Overlay -->
+    <div class="entrance-overlay" id="entrance-overlay">
+        <div class="entrance-content">
+            <div class="game-logo">
+                <div class="logo-circle">
+                    <i class="fas fa-gamepad"></i>
+                </div>
+            </div>
+            <h1 class="entrance-title">Tic-Tac-Toe</h1>
+            <div class="entrance-subtitle">Gaming Experience</div>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+            <div class="entrance-features">
+                <div class="feature-item">
+                    <i class="fas fa-users"></i>
+                    <span>Two Player Mode</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-robot"></i>
+                    <span>AI Opponent</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-star"></i>
+                    <span>Multiple Difficulties</span>
+                </div>
+            </div>
+            <div class="skip-hint">
+                <i class="fas fa-mouse-pointer"></i>
+                <span>Click anywhere to skip</span>
+                <div class="skip-button">
+                    <i class="fas fa-play"></i>
+                    <span>Skip Intro</span>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!--background elements -->
+    <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+    
+    <div class="background-element"></div>
+    <div class="background-element"></div>
+    <div class="background-element"></div>
+    
+    <div class="container" id="game-container" style="opacity: 0; transform: translateY(50px);">
+        <header class="game-header">
+            <h1><i class="fas fa-gamepad"></i>Tic-Tac-Toe</h1>
+            <div class="game-info">
+                <div class="player-turn">
+                    <span id="current-player">X</span>'s Turn
+                </div>
+                <div class="game-mode">
+                    <span id="game-mode-display">Two Player</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="game-controls">
+            <div class="mode-selector">
+                <button class="mode-btn active" data-mode="two-player">
+                    <i class="fas fa-users"></i> Two Player
+                </button>
+                <button class="mode-btn" data-mode="ai">
+                    <i class="fas fa-robot"></i> vs AI
+                </button>
+            </div>
+            
+            <div class="difficulty-selector" id="difficulty-selector" style="display: none;">
+                <label>Difficulty:</label>
+                <select id="difficulty">
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="game-board">
+            <div class="board-grid">
+                <div class="cell" data-index="0"></div>
+                <div class="cell" data-index="1"></div>
+                <div class="cell" data-index="2"></div>
+                <div class="cell" data-index="3"></div>
+                <div class="cell" data-index="4"></div>
+                <div class="cell" data-index="5"></div>
+                <div class="cell" data-index="6"></div>
+                <div class="cell" data-index="7"></div>
+                <div class="cell" data-index="8"></div>
+            </div>
+        </div>
+
+        <div class="game-status">
+            <div class="score-board">
+                <div class="score-item">
+                    <span class="player-label">X</span>
+                    <span class="score" id="score-x">0</span>
+                </div>
+                <div class="score-item">
+                    <span class="player-label">O</span>
+                    <span class="score" id="score-o">0</span>
+                </div>
+            </div>
+            
+            <div class="game-message" id="game-message">
+                Click any cell to start!
+            </div>
+        </div>
+
+        <div class="game-actions">
+            <button class="action-btn" id="new-game-btn">
+                <i class="fas fa-redo"></i> New Game
+            </button>
+            <button class="action-btn" id="reset-scores-btn">
+                <i class="fas fa-trash"></i> Reset Scores
+            </button>
+        </div>
+    </div>
+
+    <div class="modal" id="win-modal">
+        <div class="modal-content">
+            <h2 id="modal-title">Game Over!</h2>
+            <p id="modal-message">Player X wins!</p>
+            <button class="modal-btn" id="play-again-btn">Play Again</button>
+            <button class="modal-btn secondary" id="close-modal-btn">Close</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
